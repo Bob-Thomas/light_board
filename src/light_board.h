@@ -29,6 +29,8 @@ class light_board {
         HCSR04* height_sensor;
         bool track_manuals = false;
         float jump_history[];
+        uint8_t min_jump_height = 0;
+        uint8_t max_jump_height = 74;
     public:
         light_board();
 
@@ -40,11 +42,11 @@ class light_board {
 
         void update();
 
-        void set_height_range(int min, int max);
+        void set_height_range(uint8_t min, uint8_t max);
 
-        void set_z_force_range(int min, int max);
+        void set_z_force_range(uint8_t min, uint8_t max);
 
-        void blink_board();
+        void blink_board(uint32_t distance);
 
         int get_heighest_jump();
 

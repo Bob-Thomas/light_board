@@ -3,78 +3,64 @@
 //
 
 #include "led_strip.h"
-#include "SPI.h"
 
 
-led_strip::led_strip() {
-
+led_strip::led_strip() : num_leds(32), data(due::pin_in_out(due::pins::d3)), clock(due::pin_in_out(due::pins::d4)) {
+    init();
 }
 
-led_strip::led_strip(int amount, uint32_t data, uint32_t clock) {
-    pins = {
-            data,
-            clock
-    };
-    init(amount);
+led_strip::led_strip(int amount, due::pin_in_out &data, due::pin_in_out &clock) : num_leds(amount), data(data),
+                                                                                  clock(clock) {
+    init();
 }
 
-led_strip::led_strip(int amount, LED_STRIP_PINS pins) : pins(pins) {
-    init(amount);
+
+void led_strip::init() {
+    clock.direction_set_output();
+    data.direction_set_output();
+    for(int i = 0; i < 32; i++) {
+        colors[i].clear();
+    }
 }
 
-void led_strip::init(uint32_t amount_leds) {
-    num_leds = ((pixels = (uint8_t *) calloc((size_t) amount_leds, 3)) != NULL) ? amount_leds : 0;
-    pinMode(pins.data, OUTPUT);
-    pinMode(pins.clock, OUTPUT);
-}
-
-void led_strip::set_pixel_color(int index, RGB color) {
+void led_strip::set_pixel_color(int index, RGB rgb) {
     if (index < num_leds) { // Arrays are 0-indexed, thus NOT '<='
-        uint8_t *p = &pixels[index * 3];
+        Color* color = &colors[index];
         // See notes later regarding color order
-        *p++ = color.r;
-        *p++ = color.b;
-        *p++ = color.g;
+        color->set(rgb.r, rgb.g, rgb.b);
     }
 }
 
 void led_strip::set_pixel_color(int index, uint8_t r, uint8_t g, uint8_t b) {
     if (index < num_leds) { // Arrays are 0-indexed, thus NOT '<='
-        uint8_t *p = &pixels[index * 3];
+        Color* color = &colors[index];
         // See notes later regarding color order
-        *p++ = r;
-        *p++ = g;
-        *p++ = b;
+        color->set(r, g, b);
     }
 }
 
 
 void led_strip::update() {
-    uint16_t i, nl3 = num_leds * 3; // 3 bytes per LED
-    uint8_t bit;
-
-    for (i = 0; i < nl3; i++) {
-        for (bit = 0x80; bit; bit >>= 1) {
-            if (pixels[i] & bit) {
-                digitalWrite(pins.data, HIGH);
-            } else {
-                digitalWrite(pins.data, LOW);
+    for (int i = 0; i < 32; i++) {
+        Color color = colors[i];
+        for (int j = 0; j < 3; j++) {
+            byte c = color.getColor()[j];
+            for (int bitNum = 8 - 1; bitNum >= 0; bitNum--) {
+                clock.set(0);
+                byte mask = 1 << bitNum;
+                data.set(c & mask);
+                // Maximum input clock frequency for the WS2801 is 25MHz,
+                // so no delay is required with a 16MHz Arduino Uno.
+                clock.set(1);
             }
-            digitalWrite(pins.clock, HIGH);
-            digitalWrite(pins.clock, LOW);
-
         }
     }
-
-    delay(1); // Data is latched by holding clock pin low for 1 millisecond
+    clock.set(0);
+    hwlib::wait_ms(1);
 }
 
 uint32_t led_strip::getPixelColor(int index) {
     return 0;
-}
-
-led_strip::~led_strip() {
-    if (pixels) free(pixels);
 }
 
 uint32_t led_strip::getNumLeds() {

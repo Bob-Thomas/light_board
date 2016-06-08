@@ -1,34 +1,31 @@
-#include "Arduino.h"
-#include "light_board.h"
+#include "stdlib.h"
+#include "led_strip.h"
 
-light_board board;
+int main(void) {
+    // kill the watchdog
+    WDT->WDT_MR = WDT_MR_WDDIS;
+    auto data = due::pin_in_out(due::pins::d3);
+    auto clock = due::pin_in_out(due::pins::d4);
+    led_strip strip(32, data, clock);
+    hwlib::cout << "step 1" << hwlib::endl;
 
-void setup() {
-    Serial.begin(9600);
-    std::vector<LED_STRIP> strips;
-    strips.push_back({
-                             {
-                                     3,
-                                     4
-                             },
-                             32
-                     });
-    BOARD board_information = {
-            strips,
-            {
-                    A4,
-                    A5
-            },
-            {
-                    5,
-                    6
+    for (int i = 0; i < 32; i++) {
+        strip.set_pixel_color(i, 0, 0, 0);
+    }
+    while (1) {
+        for (int j = 0; j < 255; j++) {
+            for (int i = 0; i < 32; i++) {
+                strip.set_pixel_color(i, j, j, j);
             }
-    };
-    board = light_board(board_information);
-    board.start();
-}
-
-void loop() {
-    board.update();
-    delay(1);
+            strip.update();
+            hwlib::wait_ms(10);
+        }
+        for (int j = 255; j > 0; j--) {
+            for (int i = 0; i < 32; i++) {
+                strip.set_pixel_color(i, j, j, j);
+            }
+            strip.update();
+            hwlib::wait_ms(10);
+        }
+    }
 }

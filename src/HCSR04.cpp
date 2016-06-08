@@ -4,30 +4,24 @@
 
 #include "HCSR04.h"
 
-HCSR04::HCSR04() { }
+HCSR04::HCSR04() : trig(due::pins::d5), echo(due::pins::d6) { }
 
-HCSR04::HCSR04(uint32_t trig, uint32_t echo) {
-    pins = {
-            trig,
-            echo
-    };
-    pinMode(pins.trig, OUTPUT);
-    pinMode(pins.echo, INPUT);
+HCSR04::HCSR04(hwlib::target::pin_in_out &trig, hwlib::target::pin_in_out &echo) : trig(trig), echo(echo) {
+    trig.direction_set_output();
+    echo.direction_set_input();
 }
-
-HCSR04::HCSR04(HCSR04_PINS pins) : pins(pins) {
-    pinMode(pins.trig, OUTPUT);
-    pinMode(pins.echo, INPUT);
-};
 
 long HCSR04::get_distance() {
-    digitalWrite(pins.trig, LOW);  // Added this line
-    delayMicroseconds(2); // Added this line
-    digitalWrite(pins.trig, HIGH);
-    delayMicroseconds(10); // Added this line
-    digitalWrite(pins.trig, LOW);
-    duration = pulseIn(pins.echo, HIGH);
-    distance = (duration / 2) / 29.1;
+    trig.set(0);
+    hwlib::wait_ms(2);
+    trig.set(1);
+    hwlib::wait_ms(10); // Added this line
+    trig.set(0);
+    bool received = echo.get();
+    duration = hwlib::now_us();
+    while(!received){received = echo.get();}
+    while(received){received = echo.get();}
+    duration = hwlib::now_us() - duration;
+    distance = duration / 29 / 2;
     return distance;
 }
-

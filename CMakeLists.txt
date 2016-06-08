@@ -3,6 +3,7 @@ project(lightboard)
 
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/hwlib")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/bmptk")
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/bmptk/targets/cortex/atmel")
 
 #
 # To enable code auto-completion, please specify path
@@ -18,4 +19,4 @@ add_executable(lightboard
         src/HCSR04.cpp
         src/HCSR04.h
         src/light_board.cpp
-        src/light_board.h)
+        src/light_board.h src/config.h)

@@ -1,31 +1,22 @@
-#include "stdlib.h"
 #include "led_strip.h"
+#include "HCSR04.h"
+#include "light_board.h"
 
 int main(void) {
     // kill the watchdog
     WDT->WDT_MR = WDT_MR_WDDIS;
     auto data = due::pin_in_out(due::pins::d3);
     auto clock = due::pin_in_out(due::pins::d4);
+    auto trig = due::pin_in_out(due::pins::d5);
+    auto echo = due::pin_in_out(due::pins::d6);
     led_strip strip(32, data, clock);
+    HCSR04 height_sensor(trig, echo);
+    light_board board(strip, height_sensor, false);
     hwlib::cout << "step 1" << hwlib::endl;
 
-    for (int i = 0; i < 32; i++) {
-        strip.set_pixel_color(i, 0, 0, 0);
-    }
     while (1) {
-        for (int j = 0; j < 255; j++) {
-            for (int i = 0; i < 32; i++) {
-                strip.set_pixel_color(i, j, j, j);
-            }
-            strip.update();
-            hwlib::wait_ms(10);
-        }
-        for (int j = 255; j > 0; j--) {
-            for (int i = 0; i < 32; i++) {
-                strip.set_pixel_color(i, j, j, j);
-            }
-            strip.update();
-            hwlib::wait_ms(10);
-        }
+        board.update();
     }
+
 }
+

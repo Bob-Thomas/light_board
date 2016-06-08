@@ -41,11 +41,11 @@ void led_strip::set_pixel_color(int index, uint8_t r, uint8_t g, uint8_t b) {
 
 
 void led_strip::update() {
-    for (int i = 0; i < 32; i++) {
+    for (int i = 0; i < NUM_LEDS; i++) {
         Color color = colors[i];
-        for (int j = 0; j < 3; j++) {
+        for (int j = 0; j < COLOR_CHANNELS; j++) {
             byte c = color.getColor()[j];
-            for (int bitNum = 8 - 1; bitNum >= 0; bitNum--) {
+            for (int bitNum = CHANNEL_BIT - 1; bitNum >= 0; bitNum--) {
                 clock.set(0);
                 byte mask = 1 << bitNum;
                 data.set(c & mask);

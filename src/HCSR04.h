@@ -6,21 +6,16 @@
 #define LIGHTBOARD_HCSR04_H
 
 #include <stdint-gcc.h>
-#include "Arduino.h"
-struct HCSR04_PINS {
-    uint32_t trig;
-    uint32_t echo;
-};
+#include <hwlib-due.hpp>
+
 class HCSR04 {
     private:
-        HCSR04_PINS pins;
+        hwlib::target::pin_in_out trig, echo;
         long distance, duration;
     public:
         HCSR04();
-        HCSR04(uint32_t trig, uint32_t echo);
-        HCSR04(HCSR04_PINS pins);
+        HCSR04(hwlib::target::pin_in_out & trig, hwlib::target::pin_in_out & echo);
         long get_distance();
-
 
 };
 #endif //LIGHTBOARD_HCSR04_H

@@ -7,37 +7,19 @@
 
 #include <vector>
 #include "HCSR04.h"
-#include "ADXL335.h"
 #include "led_strip.h"
-
-struct LED_STRIP {
-    LED_STRIP_PINS pins;
-    uint32_t num_leds;
-};
-
-struct BOARD {
-    std::vector<LED_STRIP> strips;
-    ADXL_PINS accelerometer_pins;
-    HCSR04 height_sensor_pins;
-};
 
 class light_board {
     private:
-        BOARD board;
-        std::vector<led_strip> strips;
-        ADXL335* accelerometer;
-        HCSR04* height_sensor;
+        led_strip strip;
+        HCSR04 height_sensor;
         bool track_manuals = false;
         float jump_history[];
-        uint8_t min_jump_height = 0;
-        uint8_t max_jump_height = 74;
+        uint8_t min_jump_height = 11;
+        uint8_t max_jump_height = 20;
     public:
         light_board();
-
-        light_board(BOARD pins);
-
-        light_board(BOARD pins, bool track_manual);
-
+        light_board(led_strip& strip, HCSR04 & height_sensor, bool track_manual);
         void start();
 
         void update();

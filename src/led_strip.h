@@ -10,6 +10,8 @@
 #include <stdint-gcc.h>
 #include <hwlib-due.hpp>
 #include "color.h"
+#include "config.h"
+
 
 struct RGB {
     uint8_t r;
@@ -22,7 +24,7 @@ private:
     uint16_t num_leds;
     due::pin_in_out data;
     due::pin_in_out clock;
-    Color colors[32];
+    Color colors[NUM_LEDS];
 public:
     led_strip(int num_leds, due::pin_in_out &data, due::pin_in_out &clock);
 

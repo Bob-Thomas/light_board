@@ -6,23 +6,19 @@
 #define LIGHTBOARD_ADXL335_H
 
 #include <stdint.h>
+#include <hwlib-due.hpp>
 
-struct ADXL_PINS  {
-    uint32_t x;
-    uint32_t y;
-    uint32_t z;
-};
+
 class ADXL335 {
     private:
-        ADXL_PINS pins;
-        const float zero_G = 512.0;
-        const float scale = 102.3;
+        due::pin_adc x, y, z;
+        const float zero_G = 506.0;
+        const float scale = 0.0095;
         float calculated_value(int v);
 
     public:
         ADXL335();
-        ADXL335(ADXL_PINS pins);
-        ADXL335(uint32_t x, uint32_t y, uint32_t z);
+        ADXL335(due::pin_adc & x, due::pin_adc & y, due::pin_adc & z);
         float get_x();
         float get_y();
         float get_z();

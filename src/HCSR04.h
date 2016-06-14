@@ -9,13 +9,17 @@
 #include <hwlib-due.hpp>
 
 class HCSR04 {
-    private:
-        hwlib::target::pin_in_out trig, echo;
-        long distance, duration;
-    public:
-        HCSR04();
-        HCSR04(hwlib::target::pin_in_out & trig, hwlib::target::pin_in_out & echo);
-        long get_distance();
+private:
+    hwlib::target::pin_in_out trig, echo;
+    long duration;
+    double distance;
+public:
+    HCSR04();
+
+    HCSR04(hwlib::target::pin_in_out &trig, hwlib::target::pin_in_out &echo);
+
+    uint32_t get_distance();
 
 };
+
 #endif //LIGHTBOARD_HCSR04_H

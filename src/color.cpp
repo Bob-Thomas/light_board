@@ -26,6 +26,21 @@ void Color::clear() {
     color[2] = 0;
 }
 
+void Color::set_brightness(int brightness) {
+    color[0] = return_range(color[0]+brightness);
+    color[1] = return_range(color[0]+brightness);
+    color[2] = return_range(color[0]+brightness);
+}
+
+int Color::return_range(int value) {
+    if(value >= 255) {
+        return 255;
+    } else if(value <= 0) {
+        return 0;
+    }
+    return value;
+}
+
 byte* Color::getColor() {
     return color;
 }

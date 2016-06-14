@@ -24,6 +24,10 @@ class Color {
         void set(byte r, byte g, byte b);
 
         byte *getColor();
+
+    void set_brightness(int brightness);
+
+    int return_range(int value);
 };
 
 #endif //LIGHTBOARD_COLOR_H

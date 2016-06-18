@@ -30,6 +30,8 @@ public:
 
     void update();
 
+    void clear();
+
     void set_pixel_color(int index, uint8_t r, uint8_t g, uint8_t b);
 
     void set_pixel_color(int index, RGB color);
@@ -41,6 +43,8 @@ public:
     uint32_t getNumLeds();
 
     led_strip();
+
+    void set_pixel_color(int index, Color new_color);
 };
 
 #endif //LIGHTBOARD_LED_STRIP_H

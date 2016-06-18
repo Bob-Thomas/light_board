@@ -18,5 +18,7 @@ add_executable(lightboard
         src/ADXL335.cpp
         src/HCSR04.cpp
         src/HCSR04.h
+        src/highscore_controller.h
+        src/highscore_controller.cpp
         src/light_board.cpp
         src/light_board.h src/config.h)

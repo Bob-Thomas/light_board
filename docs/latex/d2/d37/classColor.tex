@@ -1,0 +1,174 @@
+\hypertarget{classColor}{}\section{Color Class Reference}
+\label{classColor}\index{Color@{Color}}
+
+
+\hyperlink{classColor}{Color} class.  
+
+
+
+
+{\ttfamily \#include $<$color.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classColor_a9a742cbe9f9f4037f5d9f4e81a9b2428}{Color} ()
+\begin{DoxyCompactList}\small\item\em Base constructor of the \hyperlink{classColor}{Color} class. \end{DoxyCompactList}\item 
+\hyperlink{classColor_a570522f943999e39696b036797368a0d}{Color} (byte r, byte g, byte b)
+\begin{DoxyCompactList}\small\item\em Parametrized constructor of the \hyperlink{classColor}{Color} Class. \end{DoxyCompactList}\item 
+void \hyperlink{classColor_ab0c6950a93608622d4250bb91c59d149}{clear} ()\hypertarget{classColor_ab0c6950a93608622d4250bb91c59d149}{}\label{classColor_ab0c6950a93608622d4250bb91c59d149}
+
+\begin{DoxyCompactList}\small\item\em Resets the byte to 0,0,0. \end{DoxyCompactList}\item 
+void \hyperlink{classColor_ae1392c29fe5d28a9d242f203d7562a9a}{set} (byte r, byte g, byte b)
+\begin{DoxyCompactList}\small\item\em Set the color byte. \end{DoxyCompactList}\item 
+byte $\ast$ \hyperlink{classColor_adb6d171b8cb5f05040b8ac4e61622124}{get\+Color} ()
+\item 
+void \hyperlink{classColor_adb69d4d77a679f76d0935208576bd27f}{set\+\_\+brightness} (int brightness)
+\begin{DoxyCompactList}\small\item\em Set the brightness of the color byte. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classColor_a40b4139eb768499a9e70b0e7a545acbf}{return\+\_\+range} (int value)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+byte \hyperlink{classColor_a0dda4940391b5d518925c36d3856d6f4}{color} \mbox{[}C\+O\+L\+O\+R\+\_\+\+C\+H\+A\+N\+N\+E\+LS\mbox{]}\hypertarget{classColor_a0dda4940391b5d518925c36d3856d6f4}{}\label{classColor_a0dda4940391b5d518925c36d3856d6f4}
+
+\begin{DoxyCompactList}\small\item\em A byte array with the size of C\+O\+L\+O\+R\+\_\+\+C\+H\+A\+N\+N\+E\+LS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classColor}{Color} class. 
+
+A simple class to keep track of color bytes 
+
+Definition at line 17 of file color.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Color@{Color}!Color@{Color}}
+\index{Color@{Color}!Color@{Color}}
+\subsubsection[{\texorpdfstring{Color()}{Color()}}]{\setlength{\rightskip}{0pt plus 5cm}Color\+::\+Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classColor_a9a742cbe9f9f4037f5d9f4e81a9b2428}{}\label{classColor_a9a742cbe9f9f4037f5d9f4e81a9b2428}
+
+
+Base constructor of the \hyperlink{classColor}{Color} class. 
+
+Simple constructor that creates a color with the rgb values 0,0,0 
+
+Definition at line 7 of file color.\+cpp.
+
+\index{Color@{Color}!Color@{Color}}
+\index{Color@{Color}!Color@{Color}}
+\subsubsection[{\texorpdfstring{Color(byte r, byte g, byte b)}{Color(byte r, byte g, byte b)}}]{\setlength{\rightskip}{0pt plus 5cm}Color\+::\+Color (
+\begin{DoxyParamCaption}
+\item[{byte}]{r, }
+\item[{byte}]{g, }
+\item[{byte}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{classColor_a570522f943999e39696b036797368a0d}{}\label{classColor_a570522f943999e39696b036797368a0d}
+
+
+Parametrized constructor of the \hyperlink{classColor}{Color} Class. 
+
+Sets the rgb paramters on the byte 
+\begin{DoxyParams}{Parameters}
+{\em r} & red value of the color byte \\
+\hline
+{\em g} & green value of the color byte \\
+\hline
+{\em b} & blue value of the color byte \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 11 of file color.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Color@{Color}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!Color@{Color}}
+\subsubsection[{\texorpdfstring{get\+Color()}{getColor()}}]{\setlength{\rightskip}{0pt plus 5cm}byte $\ast$ Color\+::get\+Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classColor_adb6d171b8cb5f05040b8ac4e61622124}{}\label{classColor_adb6d171b8cb5f05040b8ac4e61622124}
+\begin{DoxyReturn}{Returns}
+the color byte 
+\end{DoxyReturn}
+
+
+Definition at line 44 of file color.\+cpp.
+
+\index{Color@{Color}!return\+\_\+range@{return\+\_\+range}}
+\index{return\+\_\+range@{return\+\_\+range}!Color@{Color}}
+\subsubsection[{\texorpdfstring{return\+\_\+range(int value)}{return\_range(int value)}}]{\setlength{\rightskip}{0pt plus 5cm}int Color\+::return\+\_\+range (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classColor_a40b4139eb768499a9e70b0e7a545acbf}{}\label{classColor_a40b4139eb768499a9e70b0e7a545acbf}
+\begin{DoxyReturn}{Returns}
+range between 0,255 
+\end{DoxyReturn}
+
+
+Definition at line 35 of file color.\+cpp.
+
+\index{Color@{Color}!set@{set}}
+\index{set@{set}!Color@{Color}}
+\subsubsection[{\texorpdfstring{set(byte r, byte g, byte b)}{set(byte r, byte g, byte b)}}]{\setlength{\rightskip}{0pt plus 5cm}void Color\+::set (
+\begin{DoxyParamCaption}
+\item[{byte}]{r, }
+\item[{byte}]{g, }
+\item[{byte}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{classColor_ae1392c29fe5d28a9d242f203d7562a9a}{}\label{classColor_ae1392c29fe5d28a9d242f203d7562a9a}
+
+
+Set the color byte. 
+
+Sets the rgb paramters on the byte 
+\begin{DoxyParams}{Parameters}
+{\em r} & red value of the color byte \\
+\hline
+{\em g} & green value of the color byte \\
+\hline
+{\em b} & blue value of the color byte \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 17 of file color.\+cpp.
+
+\index{Color@{Color}!set\+\_\+brightness@{set\+\_\+brightness}}
+\index{set\+\_\+brightness@{set\+\_\+brightness}!Color@{Color}}
+\subsubsection[{\texorpdfstring{set\+\_\+brightness(int brightness)}{set\_brightness(int brightness)}}]{\setlength{\rightskip}{0pt plus 5cm}void Color\+::set\+\_\+brightness (
+\begin{DoxyParamCaption}
+\item[{int}]{brightness}
+\end{DoxyParamCaption}
+)}\hypertarget{classColor_adb69d4d77a679f76d0935208576bd27f}{}\label{classColor_adb69d4d77a679f76d0935208576bd27f}
+
+
+Set the brightness of the color byte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em brightness} & desired brightness to be added to the color. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 29 of file color.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/endargon/school/light\+\_\+board/src/color.\+h\item 
+/home/endargon/school/light\+\_\+board/src/color.\+cpp\end{DoxyCompactItemize}

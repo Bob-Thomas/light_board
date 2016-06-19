@@ -1,0 +1,88 @@
+\hypertarget{classHCSR04}{}\section{H\+C\+S\+R04 Class Reference}
+\label{classHCSR04}\index{H\+C\+S\+R04@{H\+C\+S\+R04}}
+
+
+Class for the \hyperlink{classHCSR04}{H\+C\+S\+R04} Ultrasonic sensor.  
+
+
+
+
+{\ttfamily \#include $<$H\+C\+S\+R04.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHCSR04_a84d6bba2b28d9a617e0dba76626393f7}{H\+C\+S\+R04} ()\hypertarget{classHCSR04_a84d6bba2b28d9a617e0dba76626393f7}{}\label{classHCSR04_a84d6bba2b28d9a617e0dba76626393f7}
+
+\begin{DoxyCompactList}\small\item\em Base constructor that puts the pins on 5, 6 for a due. \end{DoxyCompactList}\item 
+\hyperlink{classHCSR04_a32e3386f624763b956a0193c5581da33}{H\+C\+S\+R04} (hwlib\+::target\+::pin\+\_\+in\+\_\+out \&\hyperlink{classHCSR04_a933785dd5cb0ffba2517301d6227b6da}{trig}, hwlib\+::target\+::pin\+\_\+in\+\_\+out \&\hyperlink{classHCSR04_a4bff7a40fb1ed489b83d60258444c9fb}{echo})
+\begin{DoxyCompactList}\small\item\em Parametrized constructor that sets the pins to the given pins . \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classHCSR04_a6f0e9830e49a9f482211890ca87e98c4}{get\+\_\+distance} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+{\bf }\par
+\begin{DoxyCompactItemize}
+\item 
+hwlib\+::target\+::pin\+\_\+in\+\_\+out \hyperlink{classHCSR04_a933785dd5cb0ffba2517301d6227b6da}{trig}\hypertarget{classHCSR04_a933785dd5cb0ffba2517301d6227b6da}{}\label{classHCSR04_a933785dd5cb0ffba2517301d6227b6da}
+
+\begin{DoxyCompactList}\small\item\em Digital IO pins for trig and echo. \end{DoxyCompactList}\item 
+hwlib\+::target\+::pin\+\_\+in\+\_\+out \hyperlink{classHCSR04_a4bff7a40fb1ed489b83d60258444c9fb}{echo}\hypertarget{classHCSR04_a4bff7a40fb1ed489b83d60258444c9fb}{}\label{classHCSR04_a4bff7a40fb1ed489b83d60258444c9fb}
+
+\begin{DoxyCompactList}\small\item\em Digital IO pins for trig and echo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+
+\subsection{Detailed Description}
+Class for the \hyperlink{classHCSR04}{H\+C\+S\+R04} Ultrasonic sensor. 
+
+Definition at line 14 of file H\+C\+S\+R04.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{H\+C\+S\+R04@{H\+C\+S\+R04}!H\+C\+S\+R04@{H\+C\+S\+R04}}
+\index{H\+C\+S\+R04@{H\+C\+S\+R04}!H\+C\+S\+R04@{H\+C\+S\+R04}}
+\subsubsection[{\texorpdfstring{H\+C\+S\+R04(hwlib\+::target\+::pin\+\_\+in\+\_\+out \&trig, hwlib\+::target\+::pin\+\_\+in\+\_\+out \&echo)}{HCSR04(hwlib::target::pin\_in\_out \&trig, hwlib::target::pin\_in\_out \&echo)}}]{\setlength{\rightskip}{0pt plus 5cm}H\+C\+S\+R04\+::\+H\+C\+S\+R04 (
+\begin{DoxyParamCaption}
+\item[{hwlib\+::target\+::pin\+\_\+in\+\_\+out \&}]{trig, }
+\item[{hwlib\+::target\+::pin\+\_\+in\+\_\+out \&}]{echo}
+\end{DoxyParamCaption}
+)}\hypertarget{classHCSR04_a32e3386f624763b956a0193c5581da33}{}\label{classHCSR04_a32e3386f624763b956a0193c5581da33}
+
+
+Parametrized constructor that sets the pins to the given pins . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em trig} & the pin that will be set as the trig pin \\
+\hline
+{\em echo} & the pin that will be set as the echo pin \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 10 of file H\+C\+S\+R04.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{H\+C\+S\+R04@{H\+C\+S\+R04}!get\+\_\+distance@{get\+\_\+distance}}
+\index{get\+\_\+distance@{get\+\_\+distance}!H\+C\+S\+R04@{H\+C\+S\+R04}}
+\subsubsection[{\texorpdfstring{get\+\_\+distance()}{get\_distance()}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t H\+C\+S\+R04\+::get\+\_\+distance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classHCSR04_a6f0e9830e49a9f482211890ca87e98c4}{}\label{classHCSR04_a6f0e9830e49a9f482211890ca87e98c4}
+\begin{DoxyReturn}{Returns}
+current distance on the sensor 
+\end{DoxyReturn}
+
+
+Definition at line 15 of file H\+C\+S\+R04.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/endargon/school/light\+\_\+board/src/H\+C\+S\+R04.\+h\item 
+/home/endargon/school/light\+\_\+board/src/H\+C\+S\+R04.\+cpp\end{DoxyCompactItemize}

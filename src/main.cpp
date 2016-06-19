@@ -3,6 +3,12 @@
 #include "light_board.h"
 #include "ADXL335.h"
 
+/*! \mainpage Light Board project page
+ * This is doxygen documentation for my school project named light board.
+ *
+ * Light board is a project that give you the ability to keep track of the height of your jumps on your light board.
+ * Based on the height of your jumps you will be rewarded with a different color and every time your break your highscore it will reward you with pretty lights
+ */
 int main(void) {
     // kill the watchdog
     WDT->WDT_MR = WDT_MR_WDDIS;
@@ -23,3 +29,8 @@ int main(void) {
     }
 
 }
+
+/// \todo find a nice way to use the accelerometer
+/// \todo Make a reset highscore switch
+/// \todo Use a display to show the user it's high scores
+/// \todo Find a better casing and give the use the ability to have freedom with all the tricks on a board

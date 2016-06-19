@@ -1,0 +1,164 @@
+\hypertarget{classlight__board}{}\section{light\+\_\+board Class Reference}
+\label{classlight__board}\index{light\+\_\+board@{light\+\_\+board}}
+
+
+Light board class used to control the leds on the board.  
+
+
+
+
+{\ttfamily \#include $<$light\+\_\+board.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlight__board_afe44f3bfa122191bb9c2ee0022c0ad2f}{light\+\_\+board} (\hyperlink{classled__strip}{led\+\_\+strip} \&\hyperlink{classlight__board_a350253c03ce43fa63581e2fabae71ff4}{strip}, \hyperlink{classHCSR04}{H\+C\+S\+R04} \&\hyperlink{classlight__board_a1cfdc254b89c950cf3f6216518c19e92}{height\+\_\+sensor}, \hyperlink{classADXL335}{A\+D\+X\+L335} \&\hyperlink{classlight__board_a8bff254fba1927ad510f18a6a8239b57}{accelerometer})
+\begin{DoxyCompactList}\small\item\em Constructor Initializes the led strip and height sensor. \end{DoxyCompactList}\item 
+void \hyperlink{classlight__board_a144e77559c4ec9f266e887b7d00ad3b8}{update} ()\hypertarget{classlight__board_a144e77559c4ec9f266e887b7d00ad3b8}{}\label{classlight__board_a144e77559c4ec9f266e887b7d00ad3b8}
+
+\begin{DoxyCompactList}\small\item\em Update method that does all the logic Basing the lighting of the current mode (idle, riding, jumping) Calculating the current height and updating and sorting highscores. \end{DoxyCompactList}\item 
+void \hyperlink{classlight__board_a292792403615dc215ca5c8d9ead57550}{set\+\_\+height\+\_\+range} (uint8\+\_\+t min, uint8\+\_\+t max)
+\begin{DoxyCompactList}\small\item\em A method that give the ability of changing the min and max jumpheight limits. \end{DoxyCompactList}\item 
+\hyperlink{classColor}{Color} \hyperlink{classlight__board_ad143c0de4a0e9d5fa73fcdef30035d79}{get\+\_\+score\+\_\+color} (int score)
+\begin{DoxyCompactList}\small\item\em Simple helper method that returns a color based on a given highscore. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classlight__board_a349f0fb606365bdee608970a1f3754dd}{idle\+\_\+lights} ()\hypertarget{classlight__board_a349f0fb606365bdee608970a1f3754dd}{}\label{classlight__board_a349f0fb606365bdee608970a1f3754dd}
+
+\begin{DoxyCompactList}\small\item\em Simple method that starts the idle light animation. \end{DoxyCompactList}\item 
+void \hyperlink{classlight__board_a75eb746dcbbd989d3cfb50943880f62f}{jump\+\_\+lights} (int distance)\hypertarget{classlight__board_a75eb746dcbbd989d3cfb50943880f62f}{}\label{classlight__board_a75eb746dcbbd989d3cfb50943880f62f}
+
+\begin{DoxyCompactList}\small\item\em Simple method that shows the jumping light animation based on height. \end{DoxyCompactList}\item 
+void \hyperlink{classlight__board_a58809e870fe55a2aae1e85829c0f73eb}{riding\+\_\+lights} ()\hypertarget{classlight__board_a58809e870fe55a2aae1e85829c0f73eb}{}\label{classlight__board_a58809e870fe55a2aae1e85829c0f73eb}
+
+\begin{DoxyCompactList}\small\item\em Simple method that shows the last highscore in colored lights. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classled__strip}{led\+\_\+strip} \hyperlink{classlight__board_a350253c03ce43fa63581e2fabae71ff4}{strip}\hypertarget{classlight__board_a350253c03ce43fa63581e2fabae71ff4}{}\label{classlight__board_a350253c03ce43fa63581e2fabae71ff4}
+
+\begin{DoxyCompactList}\small\item\em Led strip class to be used on the light board. \end{DoxyCompactList}\item 
+\hyperlink{classADXL335}{A\+D\+X\+L335} \hyperlink{classlight__board_a8bff254fba1927ad510f18a6a8239b57}{accelerometer}\hypertarget{classlight__board_a8bff254fba1927ad510f18a6a8239b57}{}\label{classlight__board_a8bff254fba1927ad510f18a6a8239b57}
+
+\begin{DoxyCompactList}\small\item\em Accelerometer class that is currently not used. \end{DoxyCompactList}\item 
+\hyperlink{classHCSR04}{H\+C\+S\+R04} \hyperlink{classlight__board_a1cfdc254b89c950cf3f6216518c19e92}{height\+\_\+sensor}\hypertarget{classlight__board_a1cfdc254b89c950cf3f6216518c19e92}{}\label{classlight__board_a1cfdc254b89c950cf3f6216518c19e92}
+
+\begin{DoxyCompactList}\small\item\em The height sensor that will track the height of your jumps. \end{DoxyCompactList}\item 
+\hyperlink{classhighscore__controller}{highscore\+\_\+controller} \hyperlink{classlight__board_a992bdaba8c6facec48f770f642d4fa3f}{highscores}\hypertarget{classlight__board_a992bdaba8c6facec48f770f642d4fa3f}{}\label{classlight__board_a992bdaba8c6facec48f770f642d4fa3f}
+
+\begin{DoxyCompactList}\small\item\em Highscore controller that will keep track of the highscores. \end{DoxyCompactList}\item 
+bool \hyperlink{classlight__board_a57b13a5f6c129b5b2aecf01da11e9388}{jump\+\_\+started} = false\hypertarget{classlight__board_a57b13a5f6c129b5b2aecf01da11e9388}{}\label{classlight__board_a57b13a5f6c129b5b2aecf01da11e9388}
+
+\begin{DoxyCompactList}\small\item\em Simple flag to check if the jump has been started. \end{DoxyCompactList}\item 
+long long int \hyperlink{classlight__board_aacfb2a17ac3d239cbbc93ae461b13fc3}{jump\+\_\+time}\hypertarget{classlight__board_aacfb2a17ac3d239cbbc93ae461b13fc3}{}\label{classlight__board_aacfb2a17ac3d239cbbc93ae461b13fc3}
+
+\begin{DoxyCompactList}\small\item\em Simple variable to keep track of the jump time. \end{DoxyCompactList}\item 
+int \hyperlink{classlight__board_ad605ca802da24902e1d3c7134f07811f}{current\+\_\+jump\+\_\+height}\hypertarget{classlight__board_ad605ca802da24902e1d3c7134f07811f}{}\label{classlight__board_ad605ca802da24902e1d3c7134f07811f}
+
+\begin{DoxyCompactList}\small\item\em Simple variable to keep track of the current jump height. \end{DoxyCompactList}\item 
+bool \hyperlink{classlight__board_afcf221a19180e88a1844aceabf646c87}{peak\+\_\+reached} = false\hypertarget{classlight__board_afcf221a19180e88a1844aceabf646c87}{}\label{classlight__board_afcf221a19180e88a1844aceabf646c87}
+
+\begin{DoxyCompactList}\small\item\em Simple flag to keep track if the peak of the jump has been reached. \end{DoxyCompactList}\item 
+int \hyperlink{classlight__board_aa562896a357e63d2627baf74a7874785}{last\+\_\+jump} = 0\hypertarget{classlight__board_aa562896a357e63d2627baf74a7874785}{}\label{classlight__board_aa562896a357e63d2627baf74a7874785}
+
+\begin{DoxyCompactList}\small\item\em Keeps track of the last jumpheight. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{classlight__board_a08644436f6e58c565ec2621094c1f05b}{min\+\_\+jump\+\_\+height} = M\+I\+N\+\_\+\+J\+U\+M\+P\+\_\+\+H\+E\+I\+G\+HT\hypertarget{classlight__board_a08644436f6e58c565ec2621094c1f05b}{}\label{classlight__board_a08644436f6e58c565ec2621094c1f05b}
+
+\begin{DoxyCompactList}\small\item\em Minimum achievable jump height. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{classlight__board_a800693a87d23fde37d21d5c779e5f16f}{max\+\_\+jump\+\_\+height} = M\+A\+X\+\_\+\+J\+U\+M\+P\+\_\+\+H\+E\+I\+G\+HT\hypertarget{classlight__board_a800693a87d23fde37d21d5c779e5f16f}{}\label{classlight__board_a800693a87d23fde37d21d5c779e5f16f}
+
+\begin{DoxyCompactList}\small\item\em Maxium achievable jump height. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Light board class used to control the leds on the board. 
+
+This class gives the ability of using a led strip and a \hyperlink{classHCSR04}{H\+C\+S\+R04} ultrasonic sensor. Based on the ultrasonic sensor value the led strip will illuminate in different colors. The lights are based on 3 modes -\/ idle, jumping, riding Idle = if the board is upside down staring into the sky this will make the leds light up in a kitt like manner Jumping = If the board is in the air (jumping) it will show a red glow with brightness based on the height Riding = If you\textquotesingle{}re cruising around on the board it will display your latest highscore 
+
+Definition at line 21 of file light\+\_\+board.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{light\+\_\+board@{light\+\_\+board}!light\+\_\+board@{light\+\_\+board}}
+\index{light\+\_\+board@{light\+\_\+board}!light\+\_\+board@{light\+\_\+board}}
+\subsubsection[{\texorpdfstring{light\+\_\+board(led\+\_\+strip \&strip, H\+C\+S\+R04 \&height\+\_\+sensor, A\+D\+X\+L335 \&accelerometer)}{light\_board(led\_strip \&strip, HCSR04 \&height\_sensor, ADXL335 \&accelerometer)}}]{\setlength{\rightskip}{0pt plus 5cm}light\+\_\+board\+::light\+\_\+board (
+\begin{DoxyParamCaption}
+\item[{{\bf led\+\_\+strip} \&}]{strip, }
+\item[{{\bf H\+C\+S\+R04} \&}]{height\+\_\+sensor, }
+\item[{{\bf A\+D\+X\+L335} \&}]{accelerometer}
+\end{DoxyParamCaption}
+)}\hypertarget{classlight__board_afe44f3bfa122191bb9c2ee0022c0ad2f}{}\label{classlight__board_afe44f3bfa122191bb9c2ee0022c0ad2f}
+
+
+Constructor Initializes the led strip and height sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strip} & an instance of a led strip \\
+\hline
+{\em height\+\_\+sensor} & an instance of \hyperlink{classHCSR04}{H\+C\+S\+R04} \\
+\hline
+{\em accelerometer} & an instance of \hyperlink{classADXL335}{A\+D\+X\+L335} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 8 of file light\+\_\+board.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{light\+\_\+board@{light\+\_\+board}!get\+\_\+score\+\_\+color@{get\+\_\+score\+\_\+color}}
+\index{get\+\_\+score\+\_\+color@{get\+\_\+score\+\_\+color}!light\+\_\+board@{light\+\_\+board}}
+\subsubsection[{\texorpdfstring{get\+\_\+score\+\_\+color(int score)}{get\_score\_color(int score)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Color} light\+\_\+board\+::get\+\_\+score\+\_\+color (
+\begin{DoxyParamCaption}
+\item[{int}]{score}
+\end{DoxyParamCaption}
+)}\hypertarget{classlight__board_ad143c0de4a0e9d5fa73fcdef30035d79}{}\label{classlight__board_ad143c0de4a0e9d5fa73fcdef30035d79}
+
+
+Simple helper method that returns a color based on a given highscore. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em score} & value of the score you want a color based on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classColor}{Color} 
+\end{DoxyReturn}
+
+
+Definition at line 121 of file light\+\_\+board.\+cpp.
+
+\index{light\+\_\+board@{light\+\_\+board}!set\+\_\+height\+\_\+range@{set\+\_\+height\+\_\+range}}
+\index{set\+\_\+height\+\_\+range@{set\+\_\+height\+\_\+range}!light\+\_\+board@{light\+\_\+board}}
+\subsubsection[{\texorpdfstring{set\+\_\+height\+\_\+range(uint8\+\_\+t min, uint8\+\_\+t max)}{set\_height\_range(uint8\_t min, uint8\_t max)}}]{\setlength{\rightskip}{0pt plus 5cm}void light\+\_\+board\+::set\+\_\+height\+\_\+range (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{min, }
+\item[{uint8\+\_\+t}]{max}
+\end{DoxyParamCaption}
+)}\hypertarget{classlight__board_a292792403615dc215ca5c8d9ead57550}{}\label{classlight__board_a292792403615dc215ca5c8d9ead57550}
+
+
+A method that give the ability of changing the min and max jumpheight limits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & the new minimum jump height \\
+\hline
+{\em max} & the new maximum jump height \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 47 of file light\+\_\+board.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/endargon/school/light\+\_\+board/src/light\+\_\+board.\+h\item 
+/home/endargon/school/light\+\_\+board/src/light\+\_\+board.\+cpp\end{DoxyCompactItemize}

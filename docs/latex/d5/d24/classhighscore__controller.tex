@@ -1,0 +1,133 @@
+\hypertarget{classhighscore__controller}{}\section{highscore\+\_\+controller Class Reference}
+\label{classhighscore__controller}\index{highscore\+\_\+controller@{highscore\+\_\+controller}}
+
+
+Class that can keep track and sort highscores.  
+
+
+
+
+{\ttfamily \#include $<$highscore\+\_\+controller.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classhighscore__controller_ac6892088b27303398b73d511bbab7af9}{highscore\+\_\+controller} ()\hypertarget{classhighscore__controller_ac6892088b27303398b73d511bbab7af9}{}\label{classhighscore__controller_ac6892088b27303398b73d511bbab7af9}
+
+\begin{DoxyCompactList}\small\item\em Base constructor for the highscore controller sets the highscores on 0. \end{DoxyCompactList}\item 
+\hyperlink{classhighscore__controller_a6387cc8b2bab3f385f29478a38ac3bad}{highscore\+\_\+controller} (int $\ast$predefined\+\_\+scores)
+\begin{DoxyCompactList}\small\item\em Parametrised constructor that gives you the ability to set predefined highscores. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{classhighscore__controller_a387ac4f4d36c1e1d521d16b7923f6f89}{get\+\_\+highscores} ()
+\item 
+int \hyperlink{classhighscore__controller_a40b5b1a5c5abc0f9e2e0db952204f2ad}{highscore\+\_\+index} (int score)
+\begin{DoxyCompactList}\small\item\em returns of the highscore closest to the parameter score \end{DoxyCompactList}\item 
+void \hyperlink{classhighscore__controller_ac6815353165fe4c6ef891a3d42486fa6}{add\+\_\+score} (int score)
+\begin{DoxyCompactList}\small\item\em Adds a new score to the highscore list and sorts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classhighscore__controller_a17475afc6719262f8a20ec5ff860e06b}{sort\+\_\+descending} ()\hypertarget{classhighscore__controller_a17475afc6719262f8a20ec5ff860e06b}{}\label{classhighscore__controller_a17475afc6719262f8a20ec5ff860e06b}
+
+\begin{DoxyCompactList}\small\item\em Method that sorts the highscore in a descending order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classhighscore__controller_a40f4306723a0a0cb5fb5fb58082570fe}{highscores} \mbox{[}M\+A\+X\+\_\+\+A\+M\+O\+U\+N\+T\+\_\+\+O\+F\+\_\+\+H\+I\+G\+H\+S\+C\+O\+RE\mbox{]}\hypertarget{classhighscore__controller_a40f4306723a0a0cb5fb5fb58082570fe}{}\label{classhighscore__controller_a40f4306723a0a0cb5fb5fb58082570fe}
+
+\begin{DoxyCompactList}\small\item\em Array that holds the highscores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that can keep track and sort highscores. 
+
+Definition at line 13 of file highscore\+\_\+controller.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{highscore\+\_\+controller@{highscore\+\_\+controller}!highscore\+\_\+controller@{highscore\+\_\+controller}}
+\index{highscore\+\_\+controller@{highscore\+\_\+controller}!highscore\+\_\+controller@{highscore\+\_\+controller}}
+\subsubsection[{\texorpdfstring{highscore\+\_\+controller(int $\ast$predefined\+\_\+scores)}{highscore\_controller(int *predefined\_scores)}}]{\setlength{\rightskip}{0pt plus 5cm}highscore\+\_\+controller\+::highscore\+\_\+controller (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{predefined\+\_\+scores}
+\end{DoxyParamCaption}
+)}\hypertarget{classhighscore__controller_a6387cc8b2bab3f385f29478a38ac3bad}{}\label{classhighscore__controller_a6387cc8b2bab3f385f29478a38ac3bad}
+
+
+Parametrised constructor that gives you the ability to set predefined highscores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em predefined\+\_\+scores} & an array with predefined highscores \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 13 of file highscore\+\_\+controller.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{highscore\+\_\+controller@{highscore\+\_\+controller}!add\+\_\+score@{add\+\_\+score}}
+\index{add\+\_\+score@{add\+\_\+score}!highscore\+\_\+controller@{highscore\+\_\+controller}}
+\subsubsection[{\texorpdfstring{add\+\_\+score(int score)}{add\_score(int score)}}]{\setlength{\rightskip}{0pt plus 5cm}void highscore\+\_\+controller\+::add\+\_\+score (
+\begin{DoxyParamCaption}
+\item[{int}]{score}
+\end{DoxyParamCaption}
+)}\hypertarget{classhighscore__controller_ac6815353165fe4c6ef891a3d42486fa6}{}\label{classhighscore__controller_ac6815353165fe4c6ef891a3d42486fa6}
+
+
+Adds a new score to the highscore list and sorts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em score} & new score that needs to be added \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 33 of file highscore\+\_\+controller.\+cpp.
+
+\index{highscore\+\_\+controller@{highscore\+\_\+controller}!get\+\_\+highscores@{get\+\_\+highscores}}
+\index{get\+\_\+highscores@{get\+\_\+highscores}!highscore\+\_\+controller@{highscore\+\_\+controller}}
+\subsubsection[{\texorpdfstring{get\+\_\+highscores()}{get\_highscores()}}]{\setlength{\rightskip}{0pt plus 5cm}int $\ast$ highscore\+\_\+controller\+::get\+\_\+highscores (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classhighscore__controller_a387ac4f4d36c1e1d521d16b7923f6f89}{}\label{classhighscore__controller_a387ac4f4d36c1e1d521d16b7923f6f89}
+\begin{DoxyReturn}{Returns}
+the current highscore array 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file highscore\+\_\+controller.\+cpp.
+
+\index{highscore\+\_\+controller@{highscore\+\_\+controller}!highscore\+\_\+index@{highscore\+\_\+index}}
+\index{highscore\+\_\+index@{highscore\+\_\+index}!highscore\+\_\+controller@{highscore\+\_\+controller}}
+\subsubsection[{\texorpdfstring{highscore\+\_\+index(int score)}{highscore\_index(int score)}}]{\setlength{\rightskip}{0pt plus 5cm}int highscore\+\_\+controller\+::highscore\+\_\+index (
+\begin{DoxyParamCaption}
+\item[{int}]{score}
+\end{DoxyParamCaption}
+)}\hypertarget{classhighscore__controller_a40b5b1a5c5abc0f9e2e0db952204f2ad}{}\label{classhighscore__controller_a40b5b1a5c5abc0f9e2e0db952204f2ad}
+
+
+returns of the highscore closest to the parameter score 
+
+
+\begin{DoxyParams}{Parameters}
+{\em score} & a given score \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index 
+\end{DoxyReturn}
+
+
+Definition at line 47 of file highscore\+\_\+controller.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/endargon/school/light\+\_\+board/src/highscore\+\_\+controller.\+h\item 
+/home/endargon/school/light\+\_\+board/src/highscore\+\_\+controller.\+cpp\end{DoxyCompactItemize}

@@ -11,32 +11,33 @@ highscore_controller::highscore_controller() {
 }
 
 highscore_controller::highscore_controller(int *predefined_scores) {
-    for(int i = 0; i < MAX_AMOUNT_OF_HIGHSCORE; i++) {
+    for (int i = 0; i < MAX_AMOUNT_OF_HIGHSCORE; i++) {
         highscores[i] = predefined_scores[i];
     }
+    sort_descending();
 }
 
-void highscore_controller::sort_descending(int *arr, int n) {
+void highscore_controller::sort_descending() {
     int a = 0;
-    for (int i = 0; i < n; ++i) {
-        for (int j = i + 1; j < n; ++j) {
-            if (arr[i] < arr[j]) {
-                a = arr[i];
-                arr[i] = arr[j];
-                arr[j] = a;
+    for (int i = 0; i < MAX_AMOUNT_OF_HIGHSCORE; ++i) {
+        for (int j = i + 1; j < MAX_AMOUNT_OF_HIGHSCORE; ++j) {
+            if (highscores[i] < highscores[j]) {
+                a = highscores[i];
+                highscores[i] = highscores[j];
+                highscores[j] = a;
             }
         }
     }
 }
 
 void highscore_controller::add_score(int score) {
-    for (int i = 0; i < MAX_AMOUNT_OF_HIGHSCORE; i++) {
-        if (highscores[i] == 0) {
-            highscores[i] = score;
+    for (int i = MAX_AMOUNT_OF_HIGHSCORE - 1; i > 0; i--) {
+        if (highscores[i] > score) {
+            highscores[i - 1] = score;
             break;
         }
     }
-    sort_descending(highscores, MAX_AMOUNT_OF_HIGHSCORE);
+    sort_descending();
 }
 
 int *highscore_controller::get_highscores() {

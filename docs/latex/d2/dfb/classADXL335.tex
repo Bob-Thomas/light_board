@@ -1,0 +1,224 @@
+\hypertarget{classADXL335}{}\section{A\+D\+X\+L335 Class Reference}
+\label{classADXL335}\index{A\+D\+X\+L335@{A\+D\+X\+L335}}
+
+
+Class for the \hyperlink{classADXL335}{A\+D\+X\+L335} accelerometer chip Simple getters of the x,y and z values.  
+
+
+
+
+{\ttfamily \#include $<$A\+D\+X\+L335.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classADXL335_af6c1badeed65bb0bdc6410d96873081b}{A\+D\+X\+L335} ()
+\begin{DoxyCompactList}\small\item\em Base constructor for the class. \end{DoxyCompactList}\item 
+\hyperlink{classADXL335_a4aeb4ceac279de05b549e39940a558c9}{A\+D\+X\+L335} (due\+::pin\+\_\+adc \&\hyperlink{classADXL335_afa8e0faffb2114ec6b2d36b3cb9c337f}{x}, due\+::pin\+\_\+adc \&\hyperlink{classADXL335_a5a0eeced2cd28274b0a4e54cc097da74}{y}, due\+::pin\+\_\+adc \&\hyperlink{classADXL335_a26e9e2abcbd27d101b5d800c89847da8}{z})
+\begin{DoxyCompactList}\small\item\em Parametrized constructor for the class Sets the x, y, z with the given parameters. \end{DoxyCompactList}\item 
+float \hyperlink{classADXL335_a834d9d544d91c01c0343346cd47da2d2}{get\+\_\+x} ()
+\item 
+float \hyperlink{classADXL335_ad23857719cb5623109bf0b93d7ab7f46}{get\+\_\+y} ()
+\item 
+float \hyperlink{classADXL335_a7c8059b14949482bd3378ee1a07af593}{get\+\_\+z} ()
+\item 
+int \hyperlink{classADXL335_a84639e027507127c0a8433e193362ec8}{get\+\_\+raw\+\_\+x} ()
+\item 
+int \hyperlink{classADXL335_a886baf09e635c6a3d782926c0cbad5e3}{get\+\_\+raw\+\_\+y} ()
+\item 
+int \hyperlink{classADXL335_a7aed6e92324fca263d01e6275732ff6b}{get\+\_\+raw\+\_\+z} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classADXL335_a7fb91580937b0aa266ada6598cad1f4d}{calculated\+\_\+value} (int v)
+\begin{DoxyCompactList}\small\item\em Simple method that takes a integer(analog value) and calculates g forces with it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const float \hyperlink{classADXL335_a16f1b26ee0936255e4dc51242f761377}{zero\+\_\+G} = 506.\+0\hypertarget{classADXL335_a16f1b26ee0936255e4dc51242f761377}{}\label{classADXL335_a16f1b26ee0936255e4dc51242f761377}
+
+\begin{DoxyCompactList}\small\item\em Zero G used for calibrating the sensor. \end{DoxyCompactList}\item 
+const float \hyperlink{classADXL335_afaa3461d483474f08fb877661306f5ad}{scale} = 0.\+0095\hypertarget{classADXL335_afaa3461d483474f08fb877661306f5ad}{}\label{classADXL335_afaa3461d483474f08fb877661306f5ad}
+
+\begin{DoxyCompactList}\small\item\em scale used for calibrating the sensor \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\bf }\par
+\begin{DoxyCompactItemize}
+\item 
+due\+::pin\+\_\+adc \hyperlink{classADXL335_afa8e0faffb2114ec6b2d36b3cb9c337f}{x}\hypertarget{classADXL335_afa8e0faffb2114ec6b2d36b3cb9c337f}{}\label{classADXL335_afa8e0faffb2114ec6b2d36b3cb9c337f}
+
+\begin{DoxyCompactList}\small\item\em Analog pins. \end{DoxyCompactList}\item 
+due\+::pin\+\_\+adc \hyperlink{classADXL335_a5a0eeced2cd28274b0a4e54cc097da74}{y}\hypertarget{classADXL335_a5a0eeced2cd28274b0a4e54cc097da74}{}\label{classADXL335_a5a0eeced2cd28274b0a4e54cc097da74}
+
+\begin{DoxyCompactList}\small\item\em Analog pins. \end{DoxyCompactList}\item 
+due\+::pin\+\_\+adc \hyperlink{classADXL335_a26e9e2abcbd27d101b5d800c89847da8}{z}\hypertarget{classADXL335_a26e9e2abcbd27d101b5d800c89847da8}{}\label{classADXL335_a26e9e2abcbd27d101b5d800c89847da8}
+
+\begin{DoxyCompactList}\small\item\em Analog pins. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+
+\subsection{Detailed Description}
+Class for the \hyperlink{classADXL335}{A\+D\+X\+L335} accelerometer chip Simple getters of the x,y and z values. 
+
+Definition at line 15 of file A\+D\+X\+L335.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{A\+D\+X\+L335@{A\+D\+X\+L335}!A\+D\+X\+L335@{A\+D\+X\+L335}}
+\index{A\+D\+X\+L335@{A\+D\+X\+L335}!A\+D\+X\+L335@{A\+D\+X\+L335}}
+\subsubsection[{\texorpdfstring{A\+D\+X\+L335()}{ADXL335()}}]{\setlength{\rightskip}{0pt plus 5cm}A\+D\+X\+L335\+::\+A\+D\+X\+L335 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classADXL335_af6c1badeed65bb0bdc6410d96873081b}{}\label{classADXL335_af6c1badeed65bb0bdc6410d96873081b}
+
+
+Base constructor for the class. 
+
+Automatically sets x, y, z pins on A0, A1, A2 
+
+Definition at line 7 of file A\+D\+X\+L335.\+cpp.
+
+\index{A\+D\+X\+L335@{A\+D\+X\+L335}!A\+D\+X\+L335@{A\+D\+X\+L335}}
+\index{A\+D\+X\+L335@{A\+D\+X\+L335}!A\+D\+X\+L335@{A\+D\+X\+L335}}
+\subsubsection[{\texorpdfstring{A\+D\+X\+L335(due\+::pin\+\_\+adc \&x, due\+::pin\+\_\+adc \&y, due\+::pin\+\_\+adc \&z)}{ADXL335(due::pin\_adc \&x, due::pin\_adc \&y, due::pin\_adc \&z)}}]{\setlength{\rightskip}{0pt plus 5cm}A\+D\+X\+L335\+::\+A\+D\+X\+L335 (
+\begin{DoxyParamCaption}
+\item[{due\+::pin\+\_\+adc \&}]{x, }
+\item[{due\+::pin\+\_\+adc \&}]{y, }
+\item[{due\+::pin\+\_\+adc \&}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{classADXL335_a4aeb4ceac279de05b549e39940a558c9}{}\label{classADXL335_a4aeb4ceac279de05b549e39940a558c9}
+
+
+Parametrized constructor for the class Sets the x, y, z with the given parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & analog pin for the x value \\
+\hline
+{\em y} & analog pin for the y value \\
+\hline
+{\em z} & analog pin for the z value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 10 of file A\+D\+X\+L335.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{A\+D\+X\+L335@{A\+D\+X\+L335}!calculated\+\_\+value@{calculated\+\_\+value}}
+\index{calculated\+\_\+value@{calculated\+\_\+value}!A\+D\+X\+L335@{A\+D\+X\+L335}}
+\subsubsection[{\texorpdfstring{calculated\+\_\+value(int v)}{calculated\_value(int v)}}]{\setlength{\rightskip}{0pt plus 5cm}float A\+D\+X\+L335\+::calculated\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{int}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classADXL335_a7fb91580937b0aa266ada6598cad1f4d}{}\label{classADXL335_a7fb91580937b0aa266ada6598cad1f4d}
+
+
+Simple method that takes a integer(analog value) and calculates g forces with it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & value that needs to be calculated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+calculated value 
+\end{DoxyReturn}
+
+
+Definition at line 37 of file A\+D\+X\+L335.\+cpp.
+
+\index{A\+D\+X\+L335@{A\+D\+X\+L335}!get\+\_\+raw\+\_\+x@{get\+\_\+raw\+\_\+x}}
+\index{get\+\_\+raw\+\_\+x@{get\+\_\+raw\+\_\+x}!A\+D\+X\+L335@{A\+D\+X\+L335}}
+\subsubsection[{\texorpdfstring{get\+\_\+raw\+\_\+x()}{get\_raw\_x()}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+D\+X\+L335\+::get\+\_\+raw\+\_\+x (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classADXL335_a84639e027507127c0a8433e193362ec8}{}\label{classADXL335_a84639e027507127c0a8433e193362ec8}
+\begin{DoxyReturn}{Returns}
+raw analog value on the x pin 
+\end{DoxyReturn}
+
+
+Definition at line 25 of file A\+D\+X\+L335.\+cpp.
+
+\index{A\+D\+X\+L335@{A\+D\+X\+L335}!get\+\_\+raw\+\_\+y@{get\+\_\+raw\+\_\+y}}
+\index{get\+\_\+raw\+\_\+y@{get\+\_\+raw\+\_\+y}!A\+D\+X\+L335@{A\+D\+X\+L335}}
+\subsubsection[{\texorpdfstring{get\+\_\+raw\+\_\+y()}{get\_raw\_y()}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+D\+X\+L335\+::get\+\_\+raw\+\_\+y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classADXL335_a886baf09e635c6a3d782926c0cbad5e3}{}\label{classADXL335_a886baf09e635c6a3d782926c0cbad5e3}
+\begin{DoxyReturn}{Returns}
+raw analog value on the y pin 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file A\+D\+X\+L335.\+cpp.
+
+\index{A\+D\+X\+L335@{A\+D\+X\+L335}!get\+\_\+raw\+\_\+z@{get\+\_\+raw\+\_\+z}}
+\index{get\+\_\+raw\+\_\+z@{get\+\_\+raw\+\_\+z}!A\+D\+X\+L335@{A\+D\+X\+L335}}
+\subsubsection[{\texorpdfstring{get\+\_\+raw\+\_\+z()}{get\_raw\_z()}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+D\+X\+L335\+::get\+\_\+raw\+\_\+z (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classADXL335_a7aed6e92324fca263d01e6275732ff6b}{}\label{classADXL335_a7aed6e92324fca263d01e6275732ff6b}
+\begin{DoxyReturn}{Returns}
+raw analog value on the z pin 
+\end{DoxyReturn}
+
+
+Definition at line 33 of file A\+D\+X\+L335.\+cpp.
+
+\index{A\+D\+X\+L335@{A\+D\+X\+L335}!get\+\_\+x@{get\+\_\+x}}
+\index{get\+\_\+x@{get\+\_\+x}!A\+D\+X\+L335@{A\+D\+X\+L335}}
+\subsubsection[{\texorpdfstring{get\+\_\+x()}{get\_x()}}]{\setlength{\rightskip}{0pt plus 5cm}float A\+D\+X\+L335\+::get\+\_\+x (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classADXL335_a834d9d544d91c01c0343346cd47da2d2}{}\label{classADXL335_a834d9d544d91c01c0343346cd47da2d2}
+\begin{DoxyReturn}{Returns}
+calculated x value 
+\end{DoxyReturn}
+
+
+Definition at line 13 of file A\+D\+X\+L335.\+cpp.
+
+\index{A\+D\+X\+L335@{A\+D\+X\+L335}!get\+\_\+y@{get\+\_\+y}}
+\index{get\+\_\+y@{get\+\_\+y}!A\+D\+X\+L335@{A\+D\+X\+L335}}
+\subsubsection[{\texorpdfstring{get\+\_\+y()}{get\_y()}}]{\setlength{\rightskip}{0pt plus 5cm}float A\+D\+X\+L335\+::get\+\_\+y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classADXL335_ad23857719cb5623109bf0b93d7ab7f46}{}\label{classADXL335_ad23857719cb5623109bf0b93d7ab7f46}
+\begin{DoxyReturn}{Returns}
+calculated y value 
+\end{DoxyReturn}
+
+
+Definition at line 17 of file A\+D\+X\+L335.\+cpp.
+
+\index{A\+D\+X\+L335@{A\+D\+X\+L335}!get\+\_\+z@{get\+\_\+z}}
+\index{get\+\_\+z@{get\+\_\+z}!A\+D\+X\+L335@{A\+D\+X\+L335}}
+\subsubsection[{\texorpdfstring{get\+\_\+z()}{get\_z()}}]{\setlength{\rightskip}{0pt plus 5cm}float A\+D\+X\+L335\+::get\+\_\+z (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classADXL335_a7c8059b14949482bd3378ee1a07af593}{}\label{classADXL335_a7c8059b14949482bd3378ee1a07af593}
+\begin{DoxyReturn}{Returns}
+calculated z value 
+\end{DoxyReturn}
+
+
+Definition at line 21 of file A\+D\+X\+L335.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/endargon/school/light\+\_\+board/src/A\+D\+X\+L335.\+h\item 
+/home/endargon/school/light\+\_\+board/src/A\+D\+X\+L335.\+cpp\end{DoxyCompactItemize}

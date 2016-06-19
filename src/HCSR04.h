@@ -8,16 +8,35 @@
 #include <stdint-gcc.h>
 #include <hwlib-due.hpp>
 
+/**
+ * Class for the HCSR04 Ultrasonic sensor
+ */
 class HCSR04 {
 private:
+    //@{
+    /**
+     * Digital IO pins for trig and echo
+     */
     hwlib::target::pin_in_out trig, echo;
-    long duration;
-    double distance;
+    //@}
+
 public:
+
+    /**
+     * Base constructor that puts the pins on 5, 6 for a due
+     */
     HCSR04();
 
+    /**
+     * Parametrized constructor that sets the pins to the given pins .
+     * @param trig the pin that will be set as the trig pin
+     * @param echo the pin that will be set as the echo pin
+     */
     HCSR04(hwlib::target::pin_in_out &trig, hwlib::target::pin_in_out &echo);
 
+    /**
+     * @return current distance on the sensor
+     */
     uint32_t get_distance();
 
 };

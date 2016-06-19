@@ -9,10 +9,6 @@ light_board::light_board(led_strip &strip, HCSR04 &height_sensor, ADXL335 &accel
         strip(strip),
         accelerometer(accelerometer),
         height_sensor(height_sensor) {
-    start();
-}
-
-void light_board::start() {
     strip.clear();
 }
 

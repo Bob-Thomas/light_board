@@ -18,24 +18,14 @@ led_strip::led_strip(int amount, due::pin_in_out &data, due::pin_in_out &clock) 
 void led_strip::init() {
     clock.direction_set_output();
     data.direction_set_output();
-    for (int i = 0; i < 32; i++) {
-        colors[i].clear();
-    }
+    clear();
 }
 
 void led_strip::clear() {
-    for(int i = 0; i < num_leds; i++) {
-        colors[i] = Color(0, 0, 0);
+    for (int i = 0; i < num_leds; i++) {
+        colors[i].clear();
     }
     update();
-}
-
-void led_strip::set_pixel_color(int index, RGB rgb) {
-    if (index < num_leds) { // Arrays are 0-indexed, thus NOT '<='
-        Color *color = &colors[index];
-        // See notes later regarding color order
-        color->set(rgb.r, rgb.g, rgb.b);
-    }
 }
 
 void led_strip::set_pixel_color(int index, Color new_color) {
@@ -73,8 +63,8 @@ void led_strip::update() {
     hwlib::wait_ms(1);
 }
 
-uint32_t led_strip::getPixelColor(int index) {
-    return 0;
+Color led_strip::getPixelColor(int index) {
+    return colors[index];
 }
 
 uint32_t led_strip::getNumLeds() {

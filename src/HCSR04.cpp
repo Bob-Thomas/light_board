@@ -19,10 +19,10 @@ uint32_t HCSR04::get_distance() {
     hwlib::wait_ms(10); // Added this line
     trig.set(0);
     bool received = echo.get();
-    duration = hwlib::now_us();
+    int duration = (int) hwlib::now_us();
     while(!received){received = echo.get();}
     while(received){received = echo.get();}
-    duration = (hwlib::now_us() - duration)-DISTANCE_CALIBRATION;
-    distance = (duration/2) / 29.1;
+    duration = (int) ((hwlib::now_us() - duration) - DISTANCE_CALIBRATION);
+    int distance = (int) ((duration / 2) / 29.1);
     return (uint32_t) distance;
 }

@@ -1,0 +1,176 @@
+\hypertarget{classled__strip}{}\section{led\+\_\+strip Class Reference}
+\label{classled__strip}\index{led\+\_\+strip@{led\+\_\+strip}}
+
+
+Led strip class This class will only work with a led strip based on ws801 chip with data and clock separated.  
+
+
+
+
+{\ttfamily \#include $<$led\+\_\+strip.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classled__strip_aba43c99ee0ccb5523acc42cf977fa0dc}{led\+\_\+strip} ()\hypertarget{classled__strip_aba43c99ee0ccb5523acc42cf977fa0dc}{}\label{classled__strip_aba43c99ee0ccb5523acc42cf977fa0dc}
+
+\begin{DoxyCompactList}\small\item\em Base constructor that puts the number of leds on 32 and data and clock pin on 3, 4. \end{DoxyCompactList}\item 
+\hyperlink{classled__strip_a4d3d7642deeb488441ba3c48321572d1}{led\+\_\+strip} (int \hyperlink{classled__strip_a2ea7f1f40f296c61d2eb93d3e1b45436}{num\+\_\+leds}, due\+::pin\+\_\+in\+\_\+out \&\hyperlink{classled__strip_ac06ac086bc492b8b90d4bdec5a1665e7}{data}, due\+::pin\+\_\+in\+\_\+out \&\hyperlink{classled__strip_a9114ec90b6a38eb93b360f38ffef1f04}{clock})
+\begin{DoxyCompactList}\small\item\em Constructor for the led strip. \end{DoxyCompactList}\item 
+void \hyperlink{classled__strip_a00573e13bf5d111fe9a8c5b5fde5a0ac}{update} ()\hypertarget{classled__strip_a00573e13bf5d111fe9a8c5b5fde5a0ac}{}\label{classled__strip_a00573e13bf5d111fe9a8c5b5fde5a0ac}
+
+\begin{DoxyCompactList}\small\item\em Method that updates the led strip with the current set colors. \end{DoxyCompactList}\item 
+void \hyperlink{classled__strip_a044db3bc3f36719270115199896d2225}{clear} ()\hypertarget{classled__strip_a044db3bc3f36719270115199896d2225}{}\label{classled__strip_a044db3bc3f36719270115199896d2225}
+
+\begin{DoxyCompactList}\small\item\em Wipes out out the led strip putting everything on rgb(0, 0, 0) \end{DoxyCompactList}\item 
+void \hyperlink{classled__strip_ab99d9332f7007464369c18c29d5d9094}{set\+\_\+pixel\+\_\+color} (int index, uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b)
+\begin{DoxyCompactList}\small\item\em Sets the rgb value of a pixel corresponding to the index of the number of leds. \end{DoxyCompactList}\item 
+void \hyperlink{classled__strip_a0da91ce305d8b014722b3847948b26fd}{set\+\_\+pixel\+\_\+color} (int index, \hyperlink{classColor}{Color} new\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Sets the color of a pixel corresponding to the index of the number of leds. \end{DoxyCompactList}\item 
+void \hyperlink{classled__strip_a3f587287e6503663c38d9d85a9f100f8}{init} ()\hypertarget{classled__strip_a3f587287e6503663c38d9d85a9f100f8}{}\label{classled__strip_a3f587287e6503663c38d9d85a9f100f8}
+
+\begin{DoxyCompactList}\small\item\em Sets the pins of the to the needed output or input mode Clears the led strip with 0,0,0. \end{DoxyCompactList}\item 
+\hyperlink{classColor}{Color} \hyperlink{classled__strip_afd34f14b24fe991a7134723868766c05}{get\+Pixel\+Color} (int index)
+\item 
+uint32\+\_\+t \hyperlink{classled__strip_ab5480ac4fe12e6159891c3523374a6c2}{get\+Num\+Leds} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{classled__strip_a2ea7f1f40f296c61d2eb93d3e1b45436}{num\+\_\+leds}\hypertarget{classled__strip_a2ea7f1f40f296c61d2eb93d3e1b45436}{}\label{classled__strip_a2ea7f1f40f296c61d2eb93d3e1b45436}
+
+\begin{DoxyCompactList}\small\item\em Number of leds used. \end{DoxyCompactList}\item 
+due\+::pin\+\_\+in\+\_\+out \hyperlink{classled__strip_ac06ac086bc492b8b90d4bdec5a1665e7}{data}\hypertarget{classled__strip_ac06ac086bc492b8b90d4bdec5a1665e7}{}\label{classled__strip_ac06ac086bc492b8b90d4bdec5a1665e7}
+
+\begin{DoxyCompactList}\small\item\em Pin that corresponds to the data pin. \end{DoxyCompactList}\item 
+due\+::pin\+\_\+in\+\_\+out \hyperlink{classled__strip_a9114ec90b6a38eb93b360f38ffef1f04}{clock}\hypertarget{classled__strip_a9114ec90b6a38eb93b360f38ffef1f04}{}\label{classled__strip_a9114ec90b6a38eb93b360f38ffef1f04}
+
+\begin{DoxyCompactList}\small\item\em Pin that corresponds to the clock pin. \end{DoxyCompactList}\item 
+\hyperlink{classColor}{Color} \hyperlink{classled__strip_aab51ee07d240842369857eb6e07c0738}{colors} \mbox{[}N\+U\+M\+\_\+\+L\+E\+DS\mbox{]}\hypertarget{classled__strip_aab51ee07d240842369857eb6e07c0738}{}\label{classled__strip_aab51ee07d240842369857eb6e07c0738}
+
+\begin{DoxyCompactList}\small\item\em Array of Colors with the size of the number of leds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Led strip class This class will only work with a led strip based on ws801 chip with data and clock separated. 
+
+Definition at line 19 of file led\+\_\+strip.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{led\+\_\+strip@{led\+\_\+strip}!led\+\_\+strip@{led\+\_\+strip}}
+\index{led\+\_\+strip@{led\+\_\+strip}!led\+\_\+strip@{led\+\_\+strip}}
+\subsubsection[{\texorpdfstring{led\+\_\+strip(int num\+\_\+leds, due\+::pin\+\_\+in\+\_\+out \&data, due\+::pin\+\_\+in\+\_\+out \&clock)}{led\_strip(int num\_leds, due::pin\_in\_out \&data, due::pin\_in\_out \&clock)}}]{\setlength{\rightskip}{0pt plus 5cm}led\+\_\+strip\+::led\+\_\+strip (
+\begin{DoxyParamCaption}
+\item[{int}]{num\+\_\+leds, }
+\item[{due\+::pin\+\_\+in\+\_\+out \&}]{data, }
+\item[{due\+::pin\+\_\+in\+\_\+out \&}]{clock}
+\end{DoxyParamCaption}
+)}\hypertarget{classled__strip_a4d3d7642deeb488441ba3c48321572d1}{}\label{classled__strip_a4d3d7642deeb488441ba3c48321572d1}
+
+
+Constructor for the led strip. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+leds} & amount of leds on the strip \\
+\hline
+{\em data} & the pin that corresponds to the data pin on the led strip \\
+\hline
+{\em clock} & the pin that corresponds to the clock pin on the led strip \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file led\+\_\+strip.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{led\+\_\+strip@{led\+\_\+strip}!get\+Num\+Leds@{get\+Num\+Leds}}
+\index{get\+Num\+Leds@{get\+Num\+Leds}!led\+\_\+strip@{led\+\_\+strip}}
+\subsubsection[{\texorpdfstring{get\+Num\+Leds()}{getNumLeds()}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t led\+\_\+strip\+::get\+Num\+Leds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classled__strip_ab5480ac4fe12e6159891c3523374a6c2}{}\label{classled__strip_ab5480ac4fe12e6159891c3523374a6c2}
+\begin{DoxyReturn}{Returns}
+the number of leds used 
+\end{DoxyReturn}
+
+
+Definition at line 70 of file led\+\_\+strip.\+cpp.
+
+\index{led\+\_\+strip@{led\+\_\+strip}!get\+Pixel\+Color@{get\+Pixel\+Color}}
+\index{get\+Pixel\+Color@{get\+Pixel\+Color}!led\+\_\+strip@{led\+\_\+strip}}
+\subsubsection[{\texorpdfstring{get\+Pixel\+Color(int index)}{getPixelColor(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Color} led\+\_\+strip\+::get\+Pixel\+Color (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{classled__strip_afd34f14b24fe991a7134723868766c05}{}\label{classled__strip_afd34f14b24fe991a7134723868766c05}
+\begin{DoxyReturn}{Returns}
+the color of the pixel corresponding to the index 
+\end{DoxyReturn}
+
+
+Definition at line 66 of file led\+\_\+strip.\+cpp.
+
+\index{led\+\_\+strip@{led\+\_\+strip}!set\+\_\+pixel\+\_\+color@{set\+\_\+pixel\+\_\+color}}
+\index{set\+\_\+pixel\+\_\+color@{set\+\_\+pixel\+\_\+color}!led\+\_\+strip@{led\+\_\+strip}}
+\subsubsection[{\texorpdfstring{set\+\_\+pixel\+\_\+color(int index, uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b)}{set\_pixel\_color(int index, uint8\_t r, uint8\_t g, uint8\_t b)}}]{\setlength{\rightskip}{0pt plus 5cm}void led\+\_\+strip\+::set\+\_\+pixel\+\_\+color (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{uint8\+\_\+t}]{r, }
+\item[{uint8\+\_\+t}]{g, }
+\item[{uint8\+\_\+t}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{classled__strip_ab99d9332f7007464369c18c29d5d9094}{}\label{classled__strip_ab99d9332f7007464369c18c29d5d9094}
+
+
+Sets the rgb value of a pixel corresponding to the index of the number of leds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & position of led on the strip \\
+\hline
+{\em r} & red color value \\
+\hline
+{\em g} & green color value \\
+\hline
+{\em b} & blue color value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file led\+\_\+strip.\+cpp.
+
+\index{led\+\_\+strip@{led\+\_\+strip}!set\+\_\+pixel\+\_\+color@{set\+\_\+pixel\+\_\+color}}
+\index{set\+\_\+pixel\+\_\+color@{set\+\_\+pixel\+\_\+color}!led\+\_\+strip@{led\+\_\+strip}}
+\subsubsection[{\texorpdfstring{set\+\_\+pixel\+\_\+color(int index, Color new\+\_\+color)}{set\_pixel\_color(int index, Color new\_color)}}]{\setlength{\rightskip}{0pt plus 5cm}void led\+\_\+strip\+::set\+\_\+pixel\+\_\+color (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{{\bf Color}}]{new\+\_\+color}
+\end{DoxyParamCaption}
+)}\hypertarget{classled__strip_a0da91ce305d8b014722b3847948b26fd}{}\label{classled__strip_a0da91ce305d8b014722b3847948b26fd}
+
+
+Sets the color of a pixel corresponding to the index of the number of leds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & position of led on the strip \\
+\hline
+{\em new\+\_\+color} & a new colpr \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file led\+\_\+strip.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/endargon/school/light\+\_\+board/src/led\+\_\+strip.\+h\item 
+/home/endargon/school/light\+\_\+board/src/led\+\_\+strip.\+cpp\end{DoxyCompactItemize}

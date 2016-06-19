@@ -3,6 +3,10 @@
 // This will only work for led strip with the ws801 chip
 //
 
+/**
+ * Credits to https://github.com/adafruit/Adafruit-WS2801-Library
+ * for showing me how to start on this
+ */
 #ifndef LIGHTBOARD_LED_STRIP_H
 #define LIGHTBOARD_LED_STRIP_H
 

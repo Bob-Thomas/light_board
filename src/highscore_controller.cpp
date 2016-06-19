@@ -31,9 +31,14 @@ void highscore_controller::sort_descending() {
 }
 
 void highscore_controller::add_score(int score) {
-    for (int i = MAX_AMOUNT_OF_HIGHSCORE - 1; i > 0; i--) {
-        if (highscores[i] > score) {
-            highscores[i - 1] = score;
+    for (int i = 0; i < MAX_AMOUNT_OF_HIGHSCORE; i++) {
+        if (score > highscores[i]) {
+            for (int j = i + 1; j > MAX_AMOUNT_OF_HIGHSCORE; j++) {
+                if (j + 1 < MAX_AMOUNT_OF_HIGHSCORE) {
+                    highscores[j + 1] = highscores[j];
+                }
+            }
+            highscores[i] = score;
             break;
         }
     }

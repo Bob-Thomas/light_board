@@ -29,16 +29,14 @@ void led_strip::clear() {
 }
 
 void led_strip::set_pixel_color(int index, Color new_color) {
-    if (index < num_leds) { // Arrays are 0-indexed, thus NOT '<='
+    if (index < num_leds) {
         colors[index] = new_color;
-        // See notes later regarding color order
     }
 }
 
 void led_strip::set_pixel_color(int index, uint8_t r, uint8_t g, uint8_t b) {
-    if (index < num_leds) { // Arrays are 0-indexed, thus NOT '<='
+    if (index < num_leds) {
         Color *color = &colors[index];
-        // See notes later regarding color order
         color->set(r, g, b);
     }
 }
@@ -53,8 +51,6 @@ void led_strip::update() {
                 clock.set(0);
                 byte mask = 1 << bitNum;
                 data.set(c & mask);
-                // Maximum input clock frequency for the WS2801 is 25MHz,
-                // so no delay is required with a 16MHz Arduino Uno.
                 clock.set(1);
             }
         }

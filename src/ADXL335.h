@@ -2,6 +2,9 @@
 // Created by smart on 5/22/2016.
 //
 
+/**
+ * Credited http://www.geeetech.com/wiki/index.php/ADXL335_Triple_Axis_Accelerometer_Breakout
+ */
 #ifndef LIGHTBOARD_ADXL335_H
 #define LIGHTBOARD_ADXL335_H
 

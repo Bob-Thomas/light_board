@@ -27,6 +27,8 @@ void light_board::update() {
         jump_time = (hwlib::now_us() - jump_time) - DISTANCE_CALIBRATION;
         if (current_jump_height < 200) {
             highscores.add_score(current_jump_height);
+            hwlib::cout << "new score added: " << current_jump_height << hwlib::endl;
+            hwlib::cout << "Highscore position: " << highscores.highscore_index(current_jump_height) << hwlib::endl;
             last_jump = current_jump_height;
         }
         jump_started = false;
@@ -77,7 +79,7 @@ void light_board::riding_lights() {
         for (uint32_t j = 0; j < strip.getNumLeds(); j++) {
             strip.set_pixel_color(j, get_score_color(last_jump));
             strip.update();
-            hwlib::wait_ms(10);
+            hwlib::wait_ms(5);
         }
         for (int i = 0; i < (int) strip.getNumLeds(); i++) {
             byte red = sin(6 * i + 0) * 127 + 128;
@@ -85,12 +87,12 @@ void light_board::riding_lights() {
             byte blue = sin(6 * i + 4) * 127 + 128;
             strip.set_pixel_color(i, red, green, blue);
             strip.update();
-            hwlib::wait_ms(10);
+            hwlib::wait_ms(5);
         }
         for (uint32_t j = strip.getNumLeds(); j < 0; j--) {
             strip.set_pixel_color(j, get_score_color(last_jump));
             strip.update();
-            hwlib::wait_ms(10);
+            hwlib::wait_ms(5);
         }
     } else {
         for (uint32_t j = 0; j < strip.getNumLeds(); j++) {
@@ -124,7 +126,7 @@ Color light_board::get_score_color(int score) {
         case 0:
             return Color(255, 0, 0);//red
         case 1:
-            return Color(255, 215, 139);//orange
+            return Color(255, 215, 20);//orange
         case 2:
             return Color(255, 255, 0);//yellow
         case 3:

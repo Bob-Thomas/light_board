@@ -2,6 +2,10 @@
 // Created by smart on 5/22/2016.
 //
 
+/**
+ * Credits to http://www.instructables.com/id/Simple-Arduino-and-HC-SR04-Example/
+ * For showing me a easy example I could revamp to work with hwlib
+ */
 #ifndef LIGHTBOARD_HCSR04_H
 #define LIGHTBOARD_HCSR04_H
 

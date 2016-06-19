@@ -33,4 +33,4 @@ int main(void) {
 /// \todo find a nice way to use the accelerometer
 /// \todo Make a reset highscore switch
 /// \todo Use a display to show the user it's high scores
-/// \todo Find a better casing and give the use the ability to have freedom with all the tricks on a board
+/// \todo Find a better casing and give the user the ability to have freedom with all the tricks on a board
